@@ -1,0 +1,42 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "covidreportadf95028"
+		},
+		"AzureSqlDatabase_password": {
+			"value": ""
+		},
+		"ls_ablob_covidreportingdl_accountKey": {
+			"value": ""
+		},
+		"ls_ablob_covidreportingsa_connectionString": {
+			"value": ""
+		},
+		"AzureSqlDatabase_properties_typeProperties_server": {
+			"value": "venu2601.database.windows.net"
+		},
+		"AzureSqlDatabase_properties_typeProperties_database": {
+			"value": "venu2601"
+		},
+		"AzureSqlDatabase_properties_typeProperties_userName": {
+			"value": "venu26"
+		},
+		"ls_ablob_covidreportingdl_properties_typeProperties_url": {
+			"value": "https://covidreportingdl95028.dfs.core.windows.net/"
+		},
+		"ls_http_opendata_ecdc_eu ropa_eu_properties_typeProperties_url": {
+			"value": "@{linkedService().Baseurl}"
+		},
+		"tr_ingest_population_data_properties_typeProperties_scope": {
+			"value": "/subscriptions/d2643f98-ca79-4b71-a417-300f2aa683b3/resourceGroups/venuregrp/providers/Microsoft.Storage/storageAccounts/covidreportingsa95028"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}
