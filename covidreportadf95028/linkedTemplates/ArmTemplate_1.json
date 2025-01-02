@@ -640,6 +640,9 @@
 				"policy": {
 					"elapsedTimeMetric": {}
 				},
+				"folder": {
+					"name": "sql"
+				},
 				"annotations": []
 			},
 			"dependsOn": []
@@ -710,6 +713,9 @@
 				],
 				"policy": {
 					"elapsedTimeMetric": {}
+				},
+				"folder": {
+					"name": "sql"
 				},
 				"annotations": []
 			},
