@@ -120,6 +120,26 @@
 			"dependsOn": [
 				"[resourceId('Microsoft.Resources/deployments', 'covidreportadf95028_ArmTemplate_0')]"
 			]
+		},
+		{
+			"name": "covidreportadf95028_ArmTemplate_2",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_2.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'covidreportadf95028_ArmTemplate_1')]"
+			]
 		}
 	]
 }
