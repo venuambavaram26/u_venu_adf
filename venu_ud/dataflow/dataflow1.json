@@ -45,6 +45,12 @@
 				},
 				{
 					"name": "aggregate1"
+				},
+				{
+					"name": "join1"
+				},
+				{
+					"name": "pivot1"
 				}
 			],
 			"scriptLines": [
@@ -119,7 +125,14 @@
 				"source3 derive(ecdc_year_week = year+'-W'+lpad(week_of_year,2,'0')) ~> derivedColumn1",
 				"derivedColumn1 aggregate(groupBy(ecdc_year_week),",
 				"     week_start_date = min(date),",
-				"          week_end_date = max(date)) ~> aggregate1"
+				"          week_end_date = max(date)) ~> aggregate1",
+				"split1@weekly, aggregate1 join(reported_year_week == ecdc_year_week,",
+				"     joinType:'inner',",
+				"     matchType:'exact',",
+				"     ignoreSpaces: false,",
+				"     broadcast: 'auto')~> join1",
+				"join1 pivot(columnNaming: '$N$V',",
+				"     lateral: true) ~> pivot1"
 			]
 		}
 	}
