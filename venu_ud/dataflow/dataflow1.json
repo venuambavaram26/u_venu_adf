@@ -251,6 +251,7 @@
 				"          reported_date as string,",
 				"          source as string",
 				"     ),",
+				"     partitionFileNames:['daiiiilllyyyyy'],",
 				"     umask: 0022,",
 				"     preCommands: [],",
 				"     postCommands: [],",
