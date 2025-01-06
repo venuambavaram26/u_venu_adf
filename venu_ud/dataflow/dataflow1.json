@@ -51,6 +51,9 @@
 				},
 				{
 					"name": "pivot1"
+				},
+				{
+					"name": "pivot2"
 				}
 			],
 			"scriptLines": [
@@ -140,11 +143,14 @@
 				"          source,",
 				"          ecdc_year_week,",
 				"          week_start_date,",
-				"          {} = ERROR_FUNCTION('')),",
+				"          week_end_date),",
 				"     pivotBy(indicator, ['Weekly new hospital admissions per 100k', 'Weekly new ICU admissions per 100k']),",
 				"     count = sum(value),",
 				"     columnNaming: '$V_$N',",
-				"     lateral: true) ~> pivot1"
+				"     lateral: true) ~> pivot1",
+				"split1@daily pivot(pivotBy(indicator),",
+				"     columnNaming: '$N$V',",
+				"     lateral: true) ~> pivot2"
 			]
 		}
 	}
