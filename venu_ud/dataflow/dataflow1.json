@@ -26,6 +26,9 @@
 				},
 				{
 					"name": "lookup1"
+				},
+				{
+					"name": "select2"
 				}
 			],
 			"scriptLines": [
@@ -61,10 +64,23 @@
 				"     ),",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true) ~> select1",
-				"select1, source2 lookup(ERROR_FUNCTION('') == ERROR_FUNCTION(''),",
+				"select1, source2 lookup(select1@country == source2@country,",
 				"     multiple: false,",
 				"     pickup: 'any',",
-				"     broadcast: 'auto')~> lookup1"
+				"     broadcast: 'auto')~> lookup1",
+				"lookup1 select(mapColumn(",
+				"          country = select1@country,",
+				"          indicator,",
+				"          reported_date,",
+				"          country_code_2_digit,",
+				"          reported_year_week,",
+				"          value,",
+				"          source,",
+				"          country_code_3_digit,",
+				"          population",
+				"     ),",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> select2"
 			]
 		}
 	}
