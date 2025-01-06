@@ -26,7 +26,11 @@
 					"name": "source3"
 				}
 			],
-			"sinks": [],
+			"sinks": [
+				{
+					"name": "sink1"
+				}
+			],
 			"transformations": [
 				{
 					"name": "select1"
@@ -198,13 +202,17 @@
 				"          country_code_3_digit,",
 				"          population,",
 				"          reported_date,",
-				"          reported_year_week,",
-				"          source,",
-				"          {Daily hospital occupancy_count},",
-				"          {Daily ICU occupancy_count}",
+				"          hosp = {Daily hospital occupancy_count},",
+				"          icu = {Daily ICU occupancy_count},",
+				"          source",
 				"     ),",
+				"     partitionBy('hash', 1),",
 				"     skipDuplicateMapInputs: true,",
-				"     skipDuplicateMapOutputs: true) ~> select4"
+				"     skipDuplicateMapOutputs: true) ~> select4",
+				"select3 sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> sink1"
 			]
 		}
 	}
