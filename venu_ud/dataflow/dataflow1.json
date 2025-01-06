@@ -131,8 +131,8 @@
 				"     matchType:'exact',",
 				"     ignoreSpaces: false,",
 				"     broadcast: 'auto')~> join1",
-				"join1 pivot(pivotBy(indicator),",
-				"     columnNaming: '$N$V',",
+				"join1 pivot(pivotBy(indicator, ['Weekly new hospital admissions per 100k', 'Weekly new ICU admissions per 100k']),",
+				"     columnNaming: '$V$N',",
 				"     lateral: true) ~> pivot1"
 			]
 		}
