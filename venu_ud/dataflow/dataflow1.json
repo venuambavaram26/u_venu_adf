@@ -148,8 +148,9 @@
 				"     count = sum(value),",
 				"     columnNaming: '$V_$N',",
 				"     lateral: true) ~> pivot1",
-				"split1@daily pivot(pivotBy(indicator),",
-				"     columnNaming: '$N$V',",
+				"split1@daily pivot(pivotBy(indicator, ['Daily hospital occupancy', 'Daily ICU occupancy']),",
+				"     count = sum(value),",
+				"     columnNaming: '$V_$N',",
 				"     lateral: true) ~> pivot2"
 			]
 		}
