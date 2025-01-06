@@ -166,9 +166,11 @@
 				"     columnNaming: '$V_$N',",
 				"     lateral: true) ~> pivot2",
 				"pivot1 sort(asc(country, true),",
-				"     desc(reported_year_week, true)) ~> sort1",
+				"     desc(reported_year_week, true),",
+				"     partitionBy('hash', 1)) ~> sort1",
 				"pivot2 sort(asc(country, true),",
-				"     asc(ERROR_FUNCTION(''), true)) ~> sort2"
+				"     desc(reported_date, true),",
+				"     partitionBy('hash', 1)) ~> sort2"
 			]
 		}
 	}
