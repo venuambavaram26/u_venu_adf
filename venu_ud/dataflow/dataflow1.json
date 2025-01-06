@@ -131,7 +131,8 @@
 				"     matchType:'exact',",
 				"     ignoreSpaces: false,",
 				"     broadcast: 'auto')~> join1",
-				"join1 pivot(columnNaming: '$N$V',",
+				"join1 pivot(pivotBy(indicator),",
+				"     columnNaming: '$N$V',",
 				"     lateral: true) ~> pivot1"
 			]
 		}
