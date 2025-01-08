@@ -1,5 +1,5 @@
 {
-	"name": "ecdc_data",
+	"name": "ingest_population_data",
 	"properties": {
 		"activities": [
 			{
