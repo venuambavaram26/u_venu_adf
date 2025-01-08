@@ -69,6 +69,18 @@
 						"value": "@equals(activity('Get Metadata1').output.columnCount,13)",
 						"type": "Expression"
 					},
+					"ifFalseActivities": [
+						{
+							"name": "Fail1",
+							"type": "Fail",
+							"dependsOn": [],
+							"userProperties": [],
+							"typeProperties": {
+								"message": "vvvveeeennnnnuuuuuuuu",
+								"errorCode": "1122222222222333"
+							}
+						}
+					],
 					"ifTrueActivities": [
 						{
 							"name": "Copy data1",
