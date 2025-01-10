@@ -120,20 +120,7 @@
 										"fileExtension": ".txt"
 									}
 								},
-								"enableStaging": true,
-								"logSettings": {
-									"enableCopyActivityLog": true,
-									"copyActivityLogSettings": {
-										"logLevel": "Warning",
-										"enableReliableLogging": false
-									},
-									"logLocationSettings": {
-										"linkedServiceName": {
-											"referenceName": "ls_ablob_covidreportingdl",
-											"type": "LinkedServiceReference"
-										}
-									}
-								},
+								"enableStaging": false,
 								"translator": {
 									"type": "TabularTranslator",
 									"typeConversion": true,
